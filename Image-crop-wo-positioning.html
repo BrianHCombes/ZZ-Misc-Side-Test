@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+02/07/2018
+    I'm researching this image cropping issue because I need to crop images for the 
+    purpose of responsive design.
+    I'm working on the new TTD website namely the RB page which is actually 
+    a framework for how all the pages will be built.
+    The file in particular I may apply this cropping to is:
+    C:\xampp\htdocs\Project-TTD-Website-Rock-Buster-LAMP\rb-page-Exp8\templates\tmpl00\viewTmpl_00.html.
+    A Stack Overflow Q&A covers several options including the CSS 
+    < object-fit > property at:
+    < https://stackoverflow.com/questions/15167545/how-to-crop-a-rectangular-image-into-a-square-with-css >
+    and W3 Schools has it at < https://www.w3schools.com/css/css3_object-fit.asp >
+    The objective is to crop an image in small viewports so associated text
+    font size can be kept large enough for easy readying because it will 
+    also occupy the area(s) that were cropped away from a given image.
+-->
+<html>
+<head>
+    <title>object-fit property</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+<style>    
+#test1  
+{
+/*background-image:url("DSCN4494.JPG");    */
+/* 
+
+width:380px;
+height:300px;
+object-fit:cover;
+
+*/
+
+}
+</style>
+   
+
+<!-- https://stackoverflow.com/questions/15167545/how-to-crop-a-rectangular-image-into-a-square-with-css -->
+    
+</head>
+<body>
+
+    <!--This    -->
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test1" src='DSCN4494.JPG' width="400" height="300" 
+                 style="border-radius:10px;">
+        </div>
+        <div style="text-align:center;">1: No object-fit</div>
+    </div>   
+    <br><br>
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test2" src='DSCN4494.JPG' width="400" height="300" 
+                 style="width:220px; 
+                        height:300px; 
+                        object-fit:cover; 
+                        border-radius:10px;">
+        </div>
+        <div style="text-align:center;">2: with object-fit - sides cropped away.</div>
+    </div>   
+    <br><br>
+<!--************************************************************************************************************************************************-->
+<!-- object-fit section3 -->
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test3" src='DSCN4494.JPG' width="400" height="300" 
+                 style="position:relative; 
+                        left:90px; 
+                        width:220px; 
+                        height:300px; 
+                        object-fit:cover; 
+                        border-radius:10px;">
+        </div>
+        <div style="text-align:center;">3: with object-fit - sides cropped away and centered in the frame.</div>
+        <div style="text-align:center; color:red;"> 
+            NOTE: Have discovered you can only object fit one dimension (say width for example) 
+            while holding height unchanged when you use the "cover" attribute. With this you can then crop the sides away.
+        </div>
+        <div style="text-align:center; color:blue;">
+            NOTE: If you do modify the other dimension the object-fit property will resize the proportionality to fit 
+            that other dimension. In other words the object-fit:cover attribute will fit the image to whichever dimension
+            the image can fill. You can then modify the other dimension for cropping purposes.
+        </div>
+    </div> 
+    <br><br>
+<!--************************************************************************************************************************************************-->
+
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test4" src='DSCN4494.JPG' width="400" height="300" 
+                 style="width:400px; 
+                        height:200px; 
+                        object-fit:cover; 
+                        border-radius:10px;">
+        </div>
+        <div style="text-align:center;">4: with object-fit - top and bottom cropped away.</div>
+    </div> 
+    <br><br>
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test5" src='DSCN4494.JPG' width="400" height="300" 
+                 style="position:relative; 
+                        top:50px; 
+                        width:400px; 
+                        height:200px; 
+                        object-fit:cover; 
+                        border-radius:10px;">
+        </div>
+        <div style="text-align:center;">5: with object-fit - sides cropped away and centered in the frame.</div>
+    </div> 
+<!--************************************************************************************************************************************************-->
+<!-- Test section -->
+    <br><br>
+    <div style="width:1170px; margin:auto;">
+        <div style="width:400px; height:300px; border:2px solid lightgray; margin:auto;">
+            <img id="test5" src='DSCN4494.JPG' 
+                 style="position:relative; 
+                        
+                        width:150px; 
+                        height:225px; 
+                        object-fit:cover; 
+                        border-radius:10px;">
+        </div>
+        <div style="text-align:center;">6: Test Section.</div>
+    </div> 
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div>Test</div>
+    
+    
+    
+    
+    
+</body>
+</html>

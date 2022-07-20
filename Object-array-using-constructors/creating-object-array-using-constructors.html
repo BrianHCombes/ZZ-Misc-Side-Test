@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Hangup - Object Array Assignments</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Hangup - Object Array Assignments</h1>
+    <p>   
+        This hang up is about the task of assigning a different property value to each object in an object array. Something about declaring an object as a variable and 
+        then pushing that object variable onto an array but trying to change a property value for a specific array element ends up changing all the property values 
+        to the same value that was only intended for only that one array element. 
+    </p>
+    <p>
+        But it all works if the object itself is pushed onto the array rather than it's variable assignment. All of a sudden I realize it's probably a reference issue.
+    </p>
+    <h3>
+        See console output of the various JS snippets.
+    </h3>
+    <h1>Below is about using a constructor for creating same type- This is the way to go.</h1>
+    <p id="constructorDemo"></p>
+    <h2 style="color:red">
+        This entire hangup came up when developing the new TTD RB Page. It has to do with configuring states in the config module using ui-router within AngularJS<br>
+        SEE:<br>
+        C:\School\SelfEd\SelfEd-Angular-Multiple-Controllers-Multiple-Views\public_html\Multiple-Named-Views-Selective\named-views-selected-root-config_Exp4.js<br>
+        C:\xampp\htdocs\Project-TTD-Website-Rock-Buster-LAMP\rb-page-Exp8\ttd-website-rb-page-config_Exp8.js
+    </h2> 
+
+<script>
+
+//***********************************************************************************************************************************************************
+// This is from https://www.w3schools.com/js/js_object_constructors.asp and https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_constructor1
+// I added modifications but it confirms my new approach to populating an arrray with the same data type but making sure each array element has its own < reference >
+// The answer is object < constructors >. 
+// ViewsPropety is a Constructor function - same as any function but it's capitalized to note it's a constructor
+    function ViewsProperty(name, url, views) {
+        this.name = name;
+        this.url = url;
+        this.views = views;
+    };
+
+    var array1 = [];
+    var i = 0;
+    do{
+            var viewState = new ViewsProperty("view", "/", "viewsobject"); // new object created each time hence a new reference each time.
+            viewState.name = "view" + i;
+            array1.push(viewState);
+        i++;
+      }
+    while(i < 12);
+    document.getElementById("constructorDemo").innerHTML = JSON.stringify(array1);
+
+//***********************************************************************************************************************************************************
+//  The following WON'T work as intended - it will change all obj.nameB to the last iteration value. Probably because var obj has the same reference.
+/* 
+        var array1 = [];
+        var obj = {nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}};
+        for(i=0; i<4; i++){
+            
+            obj.nameB = "WTF" + i;
+            array1.push(obj);
+        };
+        console.log(JSON.stringify(array1));
+*/
+//***********************************************************************************************************************************************************
+//  The following WILL work as intended - it will change all obj.nameB to the assigned iteration per the value of the changeProperty variable.
+/* 
+        var array1 = [];
+        for(i=0; i<4; i++){
+            
+            var changeProperty = "WTF" + i;
+            array1.push({nameA:"valueA", nameB:changeProperty, nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+        };
+        console.log(JSON.stringify(array1));
+*/
+//***********************************************************************************************************************************************************
+//  The following WON'T work as intended - it will change all obj.nameB to the last assigned value of WTF3. Probably because var obj has the same reference.
+/* 
+        var array1 = [];
+        var obj = {nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}};
+        for(i=0; i<4; i++){
+            array1.push(obj);
+        };
+
+        array1[0].nameB = "WTF1";
+        array1[1].nameB = "WTF2";
+        array1[2].nameB = "WTF3";
+        
+        console.log(JSON.stringify(array1));
+*/
+//***********************************************************************************************************************************************************
+//  The following WILL work as intended - it will change all obj.nameB to the assigned values listed. 
+/* 
+        var array1 = [];
+        for(i=0; i<4; i++){
+            array1.push({nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+        };
+
+        array1[0].nameB = "WTF1";
+        array1[1].nameB = "WTF2";
+        array1[2].nameB = "WTF3";
+        
+        console.log(JSON.stringify(array1));
+*/
+//***********************************************************************************************************************************************************
+//  The following WILL work as intended because each push creates its own reference. 
+/* 
+        var array1 = [];
+        array1.push({nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+        array1.push({nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+        array1.push({nameA:"valueA", nameB:"valueB", nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+    
+        array1[1].nameB = "-----WTF-----";
+        console.log(JSON.stringify(array1));
+*/
+//***********************************************************************************************************************************************************
+//  The following WILL work as intended because each push creates its own reference. 
+/* 
+        var array1 = [];
+        var i = 0;
+        do{
+            var change = "WTF!!" + i*100;
+            array1.push({nameA:"valueA", nameB:change, nameC:{subNameA:"subValueA", subNameB:"subValueB"}});
+            i++;
+        }
+        while(i<4);
+        console.log(JSON.stringify(array1));
+*/
+
+
+
+
+</script>
+</body>
+</html>

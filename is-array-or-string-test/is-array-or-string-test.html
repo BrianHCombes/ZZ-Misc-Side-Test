@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Is array or string test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+  </head>
+  <body>
+    <div>TODO write content</div>
+    
+    
+    
+    
+    
+    <script>
+      
+      var expression1 = [1,2,3,4,5,6,7,8,9];
+      var expression2 = "1,2,3,4,5,6,7,8,9";
+      var expression3 = 1234;
+      
+      
+        if(Array.isArray(expression1) === true){console.log("expression1 is: " + expression1 + " and is array")}
+        else if(typeof(expression1) === "string"){console.log("expression1 is: " + expression1 + " and is string")}
+        else if(typeof(expression1) === "number"){console.log("expression1 is: " + expression1 + " and is number")};
+        console.log("");
+      
+        if(Array.isArray(expression2) === true){console.log("expression2 is: " + expression2 + " and is array")}
+        else if(typeof(expression2) === "string"){console.log("expression2 is: " + expression2 + " and is string")}
+        else if(typeof(expression2) === "number"){console.log("expression2 is: " + expression2 + " and is number")};
+        console.log("");
+        
+        if(Array.isArray(expression3) === true){console.log("expression3 is: " + expression3 + " and is array")}
+        else if(typeof(expression3) === "string"){console.log("expression3 is: " + expression3 + " and is string")}
+        else if(typeof(expression3) === "number"){console.log("expression3 is: " + expression3 + " and is number")}
+        console.log("");
+        console.log("");
+      
+      
+      console.log("Is 1 array?: " + Array.isArray(expression1));
+      console.log("Is 1 number?: " + !isNaN(expression1));
+      console.log("Is 1 string?: " + !isNaN(expression1));
+      console.log("");
+      
+      console.log("Is 2 array?: " + Array.isArray(expression2));
+      console.log("Is 2 number?: " + !isNaN(expression2));
+      console.log("Is 2 string?: " + isNaN(expression2));
+      console.log("");
+      
+      console.log("Is 3 array?: " + Array.isArray(expression3));
+      console.log("Is 3 number?: " + !isNaN(expression3));
+      console.log("Is 3 string?: " + isNaN(expression3));
+      
+    </script>
+      
+    
+    
+    
+    
+    
+  </body>
+</html>

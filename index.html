@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+04-03-2017
+
+This HTML block is known as "Check Out Page - Lower Comments" in TTD's store
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+<style type="text/css">
+
+</style>    
+</head>
+<body>
+  <div id="div1">WTF this is not working!</div>
+  <div id="div2">WTF this is not working!</div>
+  <div id="div3">WTF this is not working!</div>
+  <!--<div id="div4">WTF this is not working!</div>-->
+  &#x1F642;	
+<script>
+
+  //var lrArray = ["em",1920,10,1400,8,"em",1400,8,400,20,"em",800,80,200,80];
+  var lrArray = ["em",1500,10,1920,8,"em",1400,8,600,20,"em",400,80,200,80];
+  
+  var length =lrArray.length;
+  
+  var vp = window.screen.availWidth;
+  vp = 250;
+  
+  
+  var diff;
+  //var lrParam = lrArray[1];
+  var closest = lrArray[1] - vp;
+  var closestParamIndex = 1;
+  
+  var i;
+  for(i=0; i<lrArray.length; i+=5){
+    diff = Math.abs(lrArray[i+1] - vp);
+    console.log("diffA is: " + diff);
+    if(diff < closest){
+      closest = diff;
+      closestParamIndex = i+1;
+      console.log("closestParamIndexA: " + closestParamIndex + " and the diff is: " + diff);
+    }
+    diff = Math.abs(lrArray[i+3] - vp);
+    console.log("diffB is: " + diff);
+    if(diff < closest){
+      closest = diff;
+      closestParamIndex = i+3;
+      console.log("closestParamIndexB: " + closestParamIndex  + " and the diff is: " + diff);
+    }
+  }
+
+  console.log("closestParamIndex is: " + closestParamIndex);
+  document.getElementById("div1").innerHTML = "closestParamIndex is: " + closestParamIndex;
+  
+  
+  
+  var paramGroup = Math.floor(closestParamIndex/5);
+  
+  console.log("paramGroup is: " + paramGroup);
+  document.getElementById("div2").innerHTML = "paramGroup is: " + (paramGroup+1);
+  
+  console.log("Closest Param Group is: " + lrArray[paramGroup*5 + 0] + ", " + lrArray[paramGroup*5 + 1] + ", " + lrArray[paramGroup*5 + 2] + ", " + lrArray[paramGroup*5 + 3] + ", " + lrArray[paramGroup*5 + 4]);
+  document.getElementById("div3").innerHTML = "Closest Param Group is: " + lrArray[paramGroup*5 + 0] + ", " + lrArray[paramGroup*5 + 1] + ", " + lrArray[paramGroup*5 + 2] + ", " + lrArray[paramGroup*5 + 3] + ", " + lrArray[paramGroup*5 + 4];
+
+</script>
+</body>
+</html>

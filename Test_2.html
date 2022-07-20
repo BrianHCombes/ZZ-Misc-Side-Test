@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- 
+This JSON parse and stringify example(s) uses the JSON string construct (file)
+provided by the TutorialsPoint tutorial at:
+                    
+                        https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm
+
+It has been copied, renamed, and re-contented to the file:
+
+                        SelfEd-JSON_Exp.json
+
+This file is part of this SelfEd project folder: 
+
+                        SelfEd-Javascript-JSON-Constructs
+
+//  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+//  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+
+
+-->
+
+<html>
+<head>
+    <title>SelfEd - JSON Parse and Stringify - Part 4</title>
+    <link rel="SHORTCUT ICON" href="http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+p
+{
+font-size:20px;    
+}
+        
+        
+</style>    
+    
+    
+</head>
+<body>
+   
+
+
+<script> 
+
+
+    // The variable < jsonString > (below) is a JSON string and is the storage 
+    // format when saved as a file or data component. It must be parsed to make
+    // it accessable as an object.
+/*     
+    var jsonString =    '{"objA":{"name1":"value1A", "name2":"value2A", "name3":"value3A"},' + 
+                        '"objB":{"name1":"value1B", "name2":"value2B", "name3":"value3B"},' +
+                        '"objC":{"name1":"value1C", "name2":"value2C", "name3":"value3C"}}';
+*/
+    
+    var jsonString =   '{"key1" : {"subkey1A":"subvalue1A", "subkey1B":"subvalue1B", "subkey1C":"subvalue1C", "subkey1D":"subvalue1D"},' +
+                        '"key2" : {"subkey2A":"subvalue2A", "subkey2B":"subvalue2B", "subkey2C":"subvalue2C", "subkey2D":"subvalue2D"},' +
+                        '"key3" : {"subkey3A":"subvalue3A", "subkey3B":"subvalue3B", "subkey3C":"subvalue3C", "subkey3D":"subvalue3D"}}';
+                
+
+    //console.log(JSON.stringify(jsonObj));
+    //console.log("The entire (unparsed) JSON string is: " + jsonString);
+    console.log();
+    console.log(window.location.href);
+    
+    //var path = window.location.href;
+    
+    var path1 = 'http://tarptiedown.com/TTD-Store';
+    console.log(path1);
+    var newPath1 = path1.replace(/http:\/\//, 'http://www.');
+    console.log(newPath1);
+    var newPath1A = newPath1.replace(/tarptiedown.com\/TTD-Store/, 'tarptiedown.com');
+    console.log(newPath1A);
+    console.log(" ");
+    var newPath1B = path1.replace(/http:\/\/tarptiedown.com\/TTD-Store/, 'http://www.tarptiedown.com');
+    console.log(newPath1B);
+    
+    
+    
+    
+/*    
+    
+    var path2 = window.location.href;
+    console.log(path2);
+    var newPath2 = path2.replace(/http:\/\//, 'http://www.');
+    console.log(newPath2);
+    
+*/    
+    
+    
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/TTD-Store/
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/TTD-Store/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+
+</body>
+</html>

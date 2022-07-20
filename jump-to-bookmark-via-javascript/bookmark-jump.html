@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+        
+    <div id="block_01" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 1</div>
+    
+    <div id="block_02" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 2</div>
+    
+    <div id="block_03" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 3</div>
+    
+    <div id="block_04" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 4</div>
+    
+    <div id="block_05" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 5</div>
+    
+    <div id="block_06" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 6</div>
+    
+    <div id="block_07" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 7</div>
+    
+    <div id="block_08" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 8</div>
+    
+    <div id="block_09" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 9</div>
+    
+    <div id="block_10" style="height:200px; background-color:green; color:white; border:5px solid black; margin-bottom:2%;">Block 10</div>
+    
+    
+    
+  <script>
+    
+    // This is to show the feasibility of jumping to a bookmarked element from javascript during load time. 
+    
+    var eyeD = document.getElementById("block_10").id;
+    console.log("eyeD is: " + JSON.stringify(eyeD));
+    
+    
+    function jumpTo(){
+      //window.location.href = "https://www.tarptiedown.com";
+      
+      //The Following Don't Work
+      //window.location.href = "C:/School/SelfEd/ZZ-Misc-Side-Test-and-Misc/public_html/jump-to-bookmark-via-javascript/bookmark-jump.html#block_06";
+      //window.location.href = "ZZ-Misc-Side-Test-and-Misc/public_html/jump-to-bookmark-via-javascript/bookmark-jump.html#block_09";
+      
+      //The Following Do Work
+      //window.location.href = "../jump-to-bookmark-via-javascript/bookmark-jump.html#block_09";
+      //window.location.href = "bookmark-jump.html#block_09";
+      window.location.href = "bookmark-jump.html#" + eyeD;
+      //window.location.href = "http://localhost:8383/ZZ-Misc-Side-Test-and-Misc/jump-to-bookmark-via-javascript/bookmark-jump.html#block_06";
+      
+    }
+    jumpTo();
+    
+  </script>  
+      
+    
+  </body>
+</html>

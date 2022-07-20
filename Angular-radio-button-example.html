@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-radio-input-directive-production</title>
+  
+
+  <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+  
+
+  
+</head>
+<body ng-app="radioExample">
+  
+<form name="myForm" ng-controller="ExampleController as eC">
+  <label>
+    <input type="radio" ng-model="eC.color.name" value="red">
+    Red
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="eC.color.name" ng-value="eC.specialValue">
+    Green
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="eC.color.name" value="blue">
+    Blue
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="eC.color.name" value="yellow">
+   Yellow
+  </label><br/>
+  <tt>color = {{eC.color.name}}</tt><br/>
+  <hr>
+   <label>
+    <input type="radio" ng-model="eC.otherColor" value="orange">
+   Orange
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="eC.otherColor" value="purple">
+   Purple
+  </label><br/>
+  <tt>color = {{eC.otherColor}}</tt><br/>
+  <hr>
+  <button ng-click="eC.getColorFunc()">Get Color</button>
+  <p id="showColor" style="color:blue; font-size:50px;"></p>
+ </form>
+ Note that `ng-value="specialValue"` sets radio item's value to be the value of `$scope.specialValue`.
+ 
+
+<script>
+  angular.module('radioExample', [])
+    .controller('ExampleController', [function() {
+            
+      var eCC = this;      
+        eCC.color = {
+            name: 'blue'
+        };
+      
+        eCC.specialValue = {
+            "id": "12345",
+            "value": "green"
+        };
+        
+        eCC.otherColor = "orange";
+        eCC.getColorFunc =  function(){
+                            
+                            document.getElementById("showColor").innerHTML = eCC.color.name + " and " + eCC.otherColor;
+                        }
+        
+    }]);
+</script> 
+ 
+
+
+</body>
+</html>
+
+<!-- 
+Copyright 2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->

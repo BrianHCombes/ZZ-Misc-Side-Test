@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        
+        <!--<span class="AuthorizeNetSeal" style="float:right; padding:0px 15px;"> -->
+            <!--<script type="text/javascript" language="javascript">var ANS_customer_id="34f3366f-7153-40d1-b98d-57bbd3613155";</script>-->
+            <!--<script type="text/javascript" language="javascript" src="https://verify.authorize.net/anetseal/seal.js" ></script>-->
+        <!--</span>-->
+        
+        
+        
+        
+        
+<script>        
+        
+var ANS_customer_id="34f3366f-7153-40d1-b98d-57bbd3613155";        
+// (c) 2006. Authorize.Net is a registered trademark of Lightbridge, Inc.
+var ANSVerificationURL = "https://verify.authorize.net/anetseal/";  // String must start with "//" and end with "/"
+var AuthorizeNetSeal = 
+{
+	verification_parameters: "",
+	id_parameter_name:       "pid",
+	url_parameter_name:      "rurl",
+	seal_image_file:         (ANSVerificationURL + "images/secure90x72.gif"),
+	seal_width:              "290",
+	seal_height:             "272",
+	seal_alt_text:           "Authorize.Net Merchant - Click to Verify",
+	display_url:             "http://www.authorize.net/",
+	text_color:              "blue",
+	text_size:               "9px",
+	line_spacing:            "10px",
+	new_window_height:       "430",
+	new_window_width:        "1200",
+	current_url:             "",
+	display_location:        true,
+	no_click:                false,
+	debug:                   false
+};
+
+document.writeln( '<style type="text/css">' );
+document.writeln( 'div.AuthorizeNetSeal{text-align:center;margin:0;padding:0;width:' + AuthorizeNetSeal.seal_width + 'px;font:normal ' + AuthorizeNetSeal.text_size + ' arial,helvetica,san-serif;line-height:' + AuthorizeNetSeal.line_spacing + ';}' );
+document.writeln( 'div.AuthorizeNetSeal a{text-decoration:none;color:' + AuthorizeNetSeal.text_color + ';}' );
+document.writeln( 'div.AuthorizeNetSeal a:visited{color:' + AuthorizeNetSeal.text_color + ';}' );
+document.writeln( 'div.AuthorizeNetSeal a:active{color:' + AuthorizeNetSeal.text_color + ';}' );
+document.writeln( 'div.AuthorizeNetSeal a:hover{text-decoration:underline;color:' + AuthorizeNetSeal.text_color + ';}' );
+document.writeln( 'div.AuthorizeNetSeal a img{border:0px;margin:0px;text-decoration:none;}' );
+document.writeln( '</style>' );
+
+if( window.ANS_customer_id )
+{
+	AuthorizeNetSeal.verification_parameters = '?' + AuthorizeNetSeal.id_parameter_name + '=' + escape( ANS_customer_id );
+	if( window.location.href )
+	{
+		AuthorizeNetSeal.current_url = window.location.href;
+                //AuthorizeNetSeal.current_url = AuthorizeNetSeal.current_url.replace(/http:\/\/tarptiedown.com\/TTD-Store/, 'http://www.tarptiedown.com\/TTD-Store');
+	}
+	else if( document.URL )
+	{
+		AuthorizeNetSeal.current_url = document.URL;
+                //AuthorizeNetSeal.current_url = AuthorizeNetSeal.current_url.replace(/http:\/\/tarptiedown.com\/TTD-Store/, 'http://www.tarptiedown.com\/TTD-Store');
+	}
+
+	if( AuthorizeNetSeal.current_url )
+	{
+		AuthorizeNetSeal.verification_parameters += '&' + AuthorizeNetSeal.url_parameter_name + '=' + escape( AuthorizeNetSeal.current_url );
+	}
+
+	if( !AuthorizeNetSeal.no_click )
+	{
+		document.write( '<a ' );
+		document.write( 'href="' + ANSVerificationURL  + AuthorizeNetSeal.verification_parameters + '" ' );
+		if( !AuthorizeNetSeal.debug )
+		{
+			document.write( 'onMouseOver="window.status=\'' + AuthorizeNetSeal.display_url + '\'; return true;" ' );
+			document.write( 'onMouseOut="window.status=\'\'; return true;" ' );
+			document.write( 'onClick="window.open(\'' + ANSVerificationURL + AuthorizeNetSeal.verification_parameters + '\',\'AuthorizeNetVerification\',\'' );
+			document.write( 'width=' + AuthorizeNetSeal.new_window_width );
+			document.write( ',height=' + AuthorizeNetSeal.new_window_height );
+			document.write( ',dependent=yes,resizable=yes,scrollbars=yes' );
+			document.write( ',menubar=no,toolbar=no,status=no,directories=no' );
+			if( AuthorizeNetSeal.display_location )
+			{
+				document.write( ',location=yes' );
+			}
+			document.write( '\'); return false;" ' );
+		}
+		document.write( 'target="_blank"' );
+		document.writeln( '>' );
+	}
+
+	document.writeln( '<img src="' + AuthorizeNetSeal.seal_image_file + '" width="' + AuthorizeNetSeal.seal_width + '" height="' + AuthorizeNetSeal.seal_height + '" border="0" alt="' + AuthorizeNetSeal.seal_alt_text + '">' );
+
+	if( !AuthorizeNetSeal.no_click )
+	{
+		document.writeln( '</a>' );
+	}
+}        
+    
+
+// https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/TTD-Store/index.php
+
+
+
+        
+</script>        
+</body>
+</html>
+
+<!--public_html/TTD-Store/storefront/view/default/image-->
+
+
+
+
+<!-- 
+    https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/
+
+    https://verify.authorize.net/anetseal/?pid=34%3Cf3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//tarptiedown.com/TTD-Store/
+
+    https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//tarptiedown.com/TTD-Store/
+
+    https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/TTD-Store/
+
+    https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//tarptiedown.com/TTD-Store/
+
+    https://verify.authorize.net/anetseal/?pid=34f3366f-7153-40d1-b98d-57bbd3613155&rurl=http%3A//www.tarptiedown.com/ttd-website/ttd-website-ezg-page/ttd-website-ezg-page.htm
+
+-->
