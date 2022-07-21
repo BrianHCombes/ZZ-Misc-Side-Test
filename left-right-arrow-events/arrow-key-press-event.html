@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Press a key on the keyboard in the input field.</p>
+
+<input type="text" size="40" onkeydown="myFunction(event)">
+
+<p><strong>Note:</strong> The key property is not supported in Safari or IE 8 and earlier versions.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+  
+var a = 10;  
+function myFunction(event) {
+  var x = event.key;
+  
+  document.getElementById("demo1").innerHTML = "The pressed key was: " + x;
+  
+  
+  if(x === "ArrowRight"){ 
+      
+      a += 10 
+  }
+  document.getElementById("demo2").innerHTML = "The number count is: " + a;
+}
+</script>
+
+
+<!--https://www.w3schools.com/angular/ng_ng-keypress.asp-->
+<!--https://www.w3schools.com/jsref/event_onkeypress.asp-->
+<!--https://www.w3schools.com/jsref/event_key_keycode.asp-->
+<!--https://www.w3schools.com/jsref/event_key_key.asp-->
+
+</body>
+</html>
+   

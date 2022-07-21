@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PAT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  
+  <div style="margin:10% 0; text-align:center; font-size:2em; font-family:arial"> 
+    <input type="text" size="100" value="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" id="PAT" style="text-align:center;"><br>
+    <button onclick="copyPat()">Copy text</button>
+  </div>  
+
+    <script>
+      function copyPat() {
+        var copyText = document.getElementById("PAT");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+      }
+    </script>
+
+    <!--https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement-->
+    <!--https://developer.mozilla.org/en-US/docs/Web/API-->
+</body>
+</html>
+    
+    
+    

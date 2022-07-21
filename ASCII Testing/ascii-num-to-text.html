@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>TODO write content</div>
+    
+    <p>I will display &#65;</p>
+    <p>I will display &#66;</p>
+    <p>I will display &#67;</p>
+    <p>I will display &#68;</p>
+    <p>I will display &#69;</p>
+    <p>I will display &#70;</p>
+    <p>I will display &#71;</p>
+    <p>I will display &#72;</p>
+    <p>I will display &#73;</p>
+    <p>I will display &#74;</p>
+    <p>I will display &#75;</p>
+    <p>I will display &#76;</p>
+    
+    <div id="report1" style='font-size:3em;'>If you read this it'a bad</div>
+    <div id="report2" style='font-size:3em;'>If you read this it'a bad</div>
+         
+         
+<script>
+
+var array = [1,2,3,4,5,6,7,8,9,10,11,12];
+var letters = ["a","b","c"];
+
+function GroupNum(num){
+    // alert(num);
+        this.num = num;
+        this.num = "&#" + (this.num + 64);
+        //alert(this.num);
+        return this.num;
+    };
+
+for(i=0; i<array.length; i++){
+
+    
+    var num = array[i];
+    
+    
+
+    var groupNum = new GroupNum(num);
+    letters.push(groupNum.num);
+    
+    //var letter;
+    // letter = "&#" + (num + 64);
+    //letter = "WFT";
+    //alert(letter);
+    //letters.push[letter];
+    
+    // letters.push("&#65");
+    
+    // groupNum = groupNum + 64;
+    // groupNum = "&#" + groupNum;
+    
+// document.getElementById("report1").innerHTML = groupNum.num;
+//document.getElementById("report2").innerHTML = letters.toString();
+}
+document.getElementById("report2").innerHTML = letters.toString();
+
+
+//document.getElementById("report2").innerHTML = letters[1];
+
+</script>    
+</body>
+</html>
