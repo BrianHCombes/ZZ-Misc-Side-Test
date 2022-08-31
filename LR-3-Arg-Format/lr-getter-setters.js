@@ -1,3 +1,5 @@
+// LR Response Object Declaration - window level scope
+var lr = {};
 
 // Default settings
 lr.vpWidth = lr.maxVPwidth = lr.deviceWidth = window.screen.availWidth;
@@ -6,6 +8,8 @@ lr.deviceRatio = (lr.vpHeight/lr.vpWidth).toFixed(4);
 lr.vpRatio = lr.deviceRatio;
 lr.vpWidthNameUsed = lr.deviceWidthNameUsed = "window.screen.availWidth";
 lr.vpHeightNameUsed = lr.deviceHeightNameUsed = "window.innerHeight";
+lr.upperRangePoint = 1000;
+lr.lowerRangePoint = 500;
 
 lr.default =  function(){
                 lr.vpWidth = lr.maxVPwidth = window.screen.availWidth;
@@ -41,7 +45,17 @@ var GetSet = function(){
             }
             
           };
-}
+};
+
+lr.setURP = function(upperRangePoint){
+    lr.upperRangePoint = upperRangePoint;
+//    console.log("Setted lr.upperRangePoint is: " + lr.upperRangePoint);
+};
+
+lr.setLRP = function(lowerRangePoint){
+    lr.lowerRangePoint = lowerRangePoint;
+//    console.log("Setted lr.lowerRangePoint is: " + lr.lowerRangePoint);
+};
 
 
 //***********************************************************************************************************************************************************

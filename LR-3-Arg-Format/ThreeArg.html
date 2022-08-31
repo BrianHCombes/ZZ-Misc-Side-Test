@@ -2,24 +2,39 @@
 
 <html>
   <head>
-    <title>TODO supply a title</title>
+    <title>3 Arg LR</title>
+    <link rel="SHORTCUT ICON" href="https://www.tarptiedown.com/resources/common-images/ttd-vn-icon-ttd-256x256.ico"> 
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="lr-main.js"></script>
-    <script src="lr-getter-setters.js"></script><!-- comment -->
+    
+    
+    <script src="lr-getter-setters.js"></script><!-- Order Sensitive -->
     <script src="lr-html-css.js"></script><!-- comment -->
     <script src="lr-process.js"></script><!-- comment -->
-    
+    <script src="lr-main.js"></script>
     
     
   </head>
 <body>
-  <div id="div1">TODO</div>
+  <div id="div1">TTD</div>
+  <div id="div2">TTD</div>
+  <div id="div3">TTD</div>
 
 
 
 <script>
-  document.getElementById("div1").style.fontSize = lr.w("em",1920,1,360,3);
+  
+  lr.setURP(750);
+  lr.setLRP(400);
+  
+  
+  
+  document.getElementById("div1").style.fontSize = lr.w("em",1920,1,360,5);
+  
+  document.getElementById("div2").style.fontSize = lr.w("em",1920,1,360,7);
+  
+  document.getElementById("div3").style.fontSize = lr.w("em",1,9);
 
 
 </script>  

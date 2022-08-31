@@ -1,6 +1,5 @@
  
-// LR Response Object Declaration - window level scope
-var lr = {};
+
 
 //***********************************************************************************************************************************************************
 // lr.to Console method:
@@ -78,11 +77,73 @@ lr.eval = function(){
 // lr.w method:
 // The lr.w method sets the CSS value based on the viewport width. The arguments received are 
 // the hard css properties that lineate from one to the other between the two specified view port ranges.
+//lr.w = function(){
+//  var returnArgs = processArgs(arguments, "width");
+//  //console.log("lr.w arguments returned from processArgs() is: " + JSON.stringify(returnArgs));
+//  return returnArgs.result;
+//};
+
 lr.w = function(){
+    
+//  console.log("lr.upperRangePoint is: " + lr.upperRangePoint);  
+//  console.log("lr.lowerRangePoint is: " + lr.lowerRangePoint);
+  
+//  var arguments1 = ["em",4,0.8];
+  
+//  if(arguments.length === 3){
+//     var argArrayTest = [];
+//     
+//     argArrayTest[0] = arguments[0];
+//     argArrayTest[1] = lr.upperRangePoint;
+//     argArrayTest[2] = arguments[1];
+//     argArrayTest[3] = lr.lowerRangePoint;
+//     argArrayTest[4] = arguments[2];
+//     
+//     console.log("argArrayTest is: " + argArrayTest);
+//      
+//  }
+
+    if(arguments.length === 3){
+     var argArrayPlaceHolder = [];   
+     argArrayPlaceHolder[0] = arguments[0];
+     argArrayPlaceHolder[1] = arguments[1];
+     argArrayPlaceHolder[2] = arguments[2];
+     
+//     console.log("argArrayPlaceHolder is: " + JSON.stringify(argArrayPlaceHolder));
+//     console.log("argArrayPlaceHolder[1] is: " + argArrayPlaceHolder[1]);
+//     console.log("argArrayPlaceHolder[2] is: " + argArrayPlaceHolder[2]);
+     
+     
+     arguments[0] = argArrayPlaceHolder[0];
+     arguments[1] = lr.upperRangePoint;
+     arguments[2] = argArrayPlaceHolder[1];
+//     console.log("%cargArrayPlaceHolder[2] is: " + argArrayPlaceHolder[2], "color:blue; font-size:20px;");
+     arguments[3] = lr.lowerRangePoint;
+     arguments[4] = argArrayPlaceHolder[2];
+     
+     arguments.length = 5;
+     
+//     console.log("arguments is: " + JSON.stringify(arguments));
+//     console.log("arguments is: " + arguments[1]);
+//     console.log("arguments.length is: " + arguments.length);
+      
+  }
+
+
+
+//    arguments[1] = lr.upperRangePoint;
+    console.log("arguments is: " + JSON.stringify(arguments));
+    console.log("arguments is: " + arguments[1]);
+  
+  
+  
+  
   var returnArgs = processArgs(arguments, "width");
   //console.log("lr.w arguments returned from processArgs() is: " + JSON.stringify(returnArgs));
   return returnArgs.result;
 };
+
+
 
 
 //***********************************************************************************************************************************************************
