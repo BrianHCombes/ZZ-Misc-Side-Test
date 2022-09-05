@@ -201,10 +201,39 @@ lr.dr = function(){
   return returnArgs.result;
 };
 
+
+
+
 lr.html = function(){
+  
+  console.log("from lr.html arguments are: " + JSON.stringify(arguments));
+  
+//  if(arguments.length === 3){
+//    var argArrayPlaceHolder = [];   
+//     argArrayPlaceHolder[0] = arguments[0];
+//     argArrayPlaceHolder[1] = arguments[1];
+//     argArrayPlaceHolder[2] = arguments[2];
+//     
+//     arguments[0] = argArrayPlaceHolder[0];
+//     arguments[1] = lr.upperRangePoint;
+//     arguments[2] = argArrayPlaceHolder[1];
+//     arguments[3] = argArrayPlaceHolder[2]; 
+//     arguments[4] = argArrayPlaceHolder[1]; 
+//     arguments[5] = lr.lowerRangePoint;
+//     
+//     arguments.length = 6;
+//  }
+  
+  
   var returnHTMLCSS = processHTMLCSS(arguments, "width");
   return returnHTMLCSS.result;
 };
+
+
+
+
+
+
 
 lr.hhtml = function(){
   var returnHTMLCSS = processHTMLCSS(arguments, "height");
