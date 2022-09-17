@@ -19,7 +19,7 @@
 <body>
   <div id="div1">TTD</div>
   <div id="div2">TTD</div>
-  <div id="div3">TTD</div>
+  <div id="div3" style="color:red;">TTD</div>
   <div id="div4">TTD</div>
   <div id="div5">TTD</div>
   <br>
@@ -35,15 +35,16 @@
   
   
   
-  document.getElementById("div1").style.fontSize = lr.w("em",1920,1,360,5);
+  //document.getElementById("div1").style.fontSize = lr.w("em",1920,1,360,5);
   
-  document.getElementById("div2").style.fontSize = lr.w("em",1920,1,360,7);
+  document.getElementById("div2").style.fontSize = lr.w("em",10,1500,8,1200,5,800,4,500,3,1);
   
-  document.getElementById("div3").style.fontSize = lr.w("em",1,9);
+  //document.getElementById("div3").style.fontSize = lr.w("em",1,6);
   
-  document.getElementById("div4").innerHTML = lr.html("WTF",1000,600,"RUMPERS!",599,300);
+  //document.getElementById("div4").innerHTML = lr.html("WTF",1000,600,"RUMPERS!",599,300);
   
-  //document.getElementById("div5").innerHTML = lr.html("HOLY COW!",1000,"WTF");
+  document.getElementById("div5").innerHTML = lr.html("HOLY COW!",1000);
+  //document.getElementById("div5").innerHTML = lr.html("HOLY COW!",1000,"WTF!!");
   
   
 
@@ -54,9 +55,9 @@
 // a 3 arg format thus making this applicable for user entry of both 2 arg and 3 
 // arg formats ensuring backwards compatibilty.
 
+/*
   let SNarray = ["s1_2",1400,"s2_2",1200,"s3_2",1000,"s4_2",800,"s5_2",600,"s6_2",500,"s7_2"];
   //let SNarray = ["s1_3",1900,1400,"s2_3",1400,1200,"s3_3",1200,1000,"s4_3",1000,800,"s5_3",800,600,"s6_3",600,500,"s7",500,360];
-  
   
   let SNarrayOK =true;
   let SNNarray = [];
@@ -97,31 +98,53 @@
     }
     SNNarray.push(lr.lowerRangePoint);
 
-    console.log("SNNarray is: " + SNNarray);
+    //console.log("SNNarray is: " + SNNarray);
 
     document.getElementById("div7").innerHTML = "SNNarray is: " + SNNarray;
   }
   else{
   SNNarray = Array.from(SNarray);  
-    
   };  
   
-  function process(){
-    console.log("From ThreeArg.html arguments are: " + JSON.stringify(arguments));
-  };
+  //function process(){
+  //  console.log("From ThreeArg.html arguments are: " + JSON.stringify(arguments));
+  //};
   
+  //console.log('lr.html("s1_2",1400,"s2_2",1200,"s3_2",1000,"s4_2",800,"s5_2",600,"s6_2",500,"s7_2");');
+  let returnValue = lr.html("s1_2",1400,"s2_2",1200,"s3_2",1000,"s4_2",800,"s5_2",600,"s6_2",500,"s7_2");
+  //let returnValue = lr.html("s1_2",1400,1200,"s2_2",1200,1000,"s3_2",1000,800,"s4_2",800,600,"s5_2",600,500,"s6_2",500,0);
+  console.log("returnValue is: " + returnValue);
   
-  
-  
-  
-  process(...SNNarray);
-  console.log("Return value is: " + lr.html(...SNNarray));
+  //process(...SNNarray);
+  //console.log("Return value is: " + lr.html(...SNNarray));
   //console.log("Return value is: " + lr.html("<br>",1700, 1100,"<br><br>",1100,360));
 
 
 
-
-
+  let EnterArray = ["font-size:em",3,1000,2,800,1.5,600,1.25,1];
+  let ExitArray = [];
+  
+  ExitArray.push(EnterArray[0]);
+  ExitArray.push(1920);
+  ExitArray.push(EnterArray[1]);
+  ExitArray.push(EnterArray[2]);
+  ExitArray.push(EnterArray[3]);
+  
+  let EnterIndex = 4;
+  
+  while(EnterIndex < EnterArray.length-2){
+    ExitArray.push(EnterArray[0]);
+    ExitArray.push(EnterArray[EnterIndex-2]);
+    ExitArray.push(EnterArray[EnterIndex-1]);
+    ExitArray.push(EnterArray[EnterIndex]);
+    ExitArray.push(EnterArray[EnterIndex+1]);
+    EnterIndex += 2;
+  }
+  ExitArray.push(360);
+  ExitArray.push(EnterArray[EnterArray.length-1]);
+  
+  //console.log("ExitIndex is: " + ExitArray);
+*/
 
 
 </script>  
