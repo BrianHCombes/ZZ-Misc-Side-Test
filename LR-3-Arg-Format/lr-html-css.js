@@ -3,6 +3,10 @@
 
 function processHTMLCSS(paramArgs, axisToCalculate){
   
+//  console.log("paramArgs is: " + JSON.stringify(paramArgs));
+  console.log("paramArgs is: " + JSON.stringify(paramArgs));
+  console.log("paramArgs.length is: " + paramArgs.length);
+  
   GetSet().setAxisToUse(axisToCalculate);
   var argData =  {
                   "err":false,

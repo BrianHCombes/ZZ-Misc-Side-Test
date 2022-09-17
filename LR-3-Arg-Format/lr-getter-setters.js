@@ -8,7 +8,7 @@ lr.deviceRatio = (lr.vpHeight/lr.vpWidth).toFixed(4);
 lr.vpRatio = lr.deviceRatio;
 lr.vpWidthNameUsed = lr.deviceWidthNameUsed = "window.screen.availWidth";
 lr.vpHeightNameUsed = lr.deviceHeightNameUsed = "window.innerHeight";
-lr.upperRangePoint = 1000;
+lr.upperRangePoint = 1920;
 lr.lowerRangePoint = 360;
 
 lr.default =  function(){

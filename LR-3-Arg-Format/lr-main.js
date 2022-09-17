@@ -75,6 +75,14 @@ lr.eval = function(){
 
 //***********************************************************************************************************************************************************
 // lr.w method:
+// 
+// As of 09/16/2022:
+// This lr.w method (here in C:\xampp\htdocs\ZZ-Misc-Side-Test\public_html\LR-3-Arg-Format\lr-main.js)
+// has been upgraded to a new streamlined version for the user. 
+// Case in point: There is now a 3-arg method and a 3-arg + 2n argument method.
+// A few more tests and this code work will be migrated to the Project-Linear-Response project.
+// 
+// 
 // The lr.w method sets the CSS value based on the viewport width. The arguments received are 
 // the hard css properties that lineate from one to the other between the two specified view port ranges.
 //lr.w = function(){
@@ -85,61 +93,53 @@ lr.eval = function(){
 
 lr.w = function(){
     
-//  console.log("lr.upperRangePoint is: " + lr.upperRangePoint);  
-//  console.log("lr.lowerRangePoint is: " + lr.lowerRangePoint);
-  
-//  var arguments1 = ["em",4,0.8];
-  
-//  if(arguments.length === 3){
-//     var argArrayTest = [];
-//     
-//     argArrayTest[0] = arguments[0];
-//     argArrayTest[1] = lr.upperRangePoint;
-//     argArrayTest[2] = arguments[1];
-//     argArrayTest[3] = lr.lowerRangePoint;
-//     argArrayTest[4] = arguments[2];
-//     
-//     console.log("argArrayTest is: " + argArrayTest);
-//      
-//  }
+  if(arguments.length === 3){
+    var argArrayPlaceHolder = [];   
+    argArrayPlaceHolder[0] = arguments[0];
+    argArrayPlaceHolder[1] = arguments[1];
+    argArrayPlaceHolder[2] = arguments[2];
 
-    if(arguments.length === 3){
-     var argArrayPlaceHolder = [];   
-     argArrayPlaceHolder[0] = arguments[0];
-     argArrayPlaceHolder[1] = arguments[1];
-     argArrayPlaceHolder[2] = arguments[2];
-     
-//     console.log("argArrayPlaceHolder is: " + JSON.stringify(argArrayPlaceHolder));
-//     console.log("argArrayPlaceHolder[1] is: " + argArrayPlaceHolder[1]);
-//     console.log("argArrayPlaceHolder[2] is: " + argArrayPlaceHolder[2]);
-     
-     
-     arguments[0] = argArrayPlaceHolder[0];
-     arguments[1] = lr.upperRangePoint;
-     arguments[2] = argArrayPlaceHolder[1];
-//     console.log("%cargArrayPlaceHolder[2] is: " + argArrayPlaceHolder[2], "color:blue; font-size:20px;");
-     arguments[3] = lr.lowerRangePoint;
-     arguments[4] = argArrayPlaceHolder[2];
-     
-     arguments.length = 5;
-     
-//     console.log("arguments is: " + JSON.stringify(arguments));
-//     console.log("arguments is: " + arguments[1]);
-//     console.log("arguments.length is: " + arguments.length);
-      
+    arguments[0] = argArrayPlaceHolder[0];
+    arguments[1] = lr.upperRangePoint;
+    arguments[2] = argArrayPlaceHolder[1];
+    arguments[3] = lr.lowerRangePoint;
+    arguments[4] = argArrayPlaceHolder[2];
+
+    arguments.length = 5;
   }
+  else {
+    console.log("In");
+    
+    let threeArg = [];
+    let paraGroup = true;
+    if(paraGroup === true){
+      let argIndex = 2;
+      threeArg.push(arguments[0]);
+      threeArg.push(lr.upperRangePoint);
+      threeArg.push(arguments[1]);
+      while(argIndex <= arguments.length-3){
+        threeArg.push(arguments[argIndex]);
+        threeArg.push(arguments[argIndex+1]);
+        threeArg.push(arguments[0]);
+        threeArg.push(arguments[argIndex]);
+        threeArg.push(arguments[argIndex+1]);
+        argIndex += 2;
+      }
+      threeArg.push(lr.lowerRangePoint);
+      threeArg.push(arguments[arguments.length-1]);
 
+      for(let i=0; i<threeArg.length; i++){
+        arguments[i] = threeArg[i];
+      }
+      arguments.length = threeArg.length;
+    }
+  }
+  
 
-
-//    arguments[1] = lr.upperRangePoint;
-    console.log("arguments is: " + JSON.stringify(arguments));
-    console.log("arguments is: " + arguments[1]);
-  
-  
-  
+  console.log("arguments is: " + JSON.stringify(arguments));
   
   var returnArgs = processArgs(arguments, "width");
-  //console.log("lr.w arguments returned from processArgs() is: " + JSON.stringify(returnArgs));
+  console.log("returnArgs.result is: " + returnArgs.result);
   return returnArgs.result;
 };
 
@@ -202,37 +202,58 @@ lr.dr = function(){
 };
 
 
-
+// As of 09/16/2022:
+// This lr.html method (here in C:\xampp\htdocs\ZZ-Misc-Side-Test\public_html\LR-3-Arg-Format\lr-main.js)
+// has been upgraded to a new streamlined version for the user. 
+// Case in point: lr.html() now accepts streamlined 3-arguments and 3-arguments + 2n arguments.
+// A few more tests and this code work will be migrated to the Project-Linear-Response project.
 
 lr.html = function(){
   
-  console.log("from lr.html arguments are: " + JSON.stringify(arguments));
+  let twoArg = true;
+  let threeArg = [];
   
-//  if(arguments.length === 3){
-//    var argArrayPlaceHolder = [];   
-//     argArrayPlaceHolder[0] = arguments[0];
-//     argArrayPlaceHolder[1] = arguments[1];
-//     argArrayPlaceHolder[2] = arguments[2];
-//     
-//     arguments[0] = argArrayPlaceHolder[0];
-//     arguments[1] = lr.upperRangePoint;
-//     arguments[2] = argArrayPlaceHolder[1];
-//     arguments[3] = argArrayPlaceHolder[2]; 
-//     arguments[4] = argArrayPlaceHolder[1]; 
-//     arguments[5] = lr.lowerRangePoint;
-//     
-//     arguments.length = 6;
-//  }
+  // Test for odd indexes having numbers
+  for(let n = 1; n < arguments.length; n+=2){
+    if(!isNaN(arguments[n])){}
+    else{
+      twoArg = false; 
+    };
+  };
   
+  // Test for even indexes having strings
+  for(let n = 0; n < arguments.length; n+=2){
+    if(isNaN(arguments[n])){}
+    else{
+      twoArg = false; 
+    };
+  }
   
+  // Convert to 3 arg format
+  if(twoArg === true){
+    
+    let twoArgIndex = 1;
+    threeArg.push(arguments[0]);
+    threeArg.push(100000);
+    while(twoArgIndex < arguments.length){
+      threeArg.push(arguments[twoArgIndex]);
+      threeArg.push(arguments[twoArgIndex+1]);
+      threeArg.push(arguments[twoArgIndex]);
+      twoArgIndex += 2;
+    }
+    threeArg.push(0);
+    console.log("threeArg is: " + threeArg);
+    
+    for(let i=0; i<threeArg.length; i++){
+      arguments[i] = threeArg[i];
+    }
+    arguments.length = threeArg.length;
+  }
+  
+  // Send arguments for processing
   var returnHTMLCSS = processHTMLCSS(arguments, "width");
   return returnHTMLCSS.result;
 };
-
-
-
-
-
 
 
 lr.hhtml = function(){
