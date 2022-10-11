@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+      .dropdown {
+        display: inline-block;
+        position: relative;
+       
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        width: 150%;
+        overflow: auto;
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        display: block;
+        color: #000000;
+        padding: 5px;
+        text-decoration: none;
+      }
+      .dropdown-content a:hover {
+        color: #FFFFFF;
+        background-color: #00A4BD;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div style="text-align:center;"> 
+      <div class="dropdown">
+        <button> Methods </button>
+        <div class="dropdown-content">
+          <a href="lr-intro.html">Intro</a>
+          <a href="lr-methods-lr.w()-explained.html">Explained</a>
+          <a href="https://www.youtube.com/user/hubspot">YouTube</a>
+        </div>
+      </div>
+    </div>  
+    
+    <div onmouseover="showList()" 
+         onmouseout="unShowList()" 
+         style="display:inline-block; 
+                background-color:yellow; 
+                position:relative;
+               ">
+      menu2<br>
+      <div id="div1" style="display:none; position:absolute; background-color:green;">
+        One<br>Two<br>Three
+      </div> 
+    </div>
+    
+    <script>
+      
+      function showList(){
+        document.getElementById("div1").style.display = "inline-block";
+      };
+      
+      function unShowList(){
+        document.getElementById("div1").style.display = "none";
+      }
+      
+    </script>
+    
+    
+    
+    
+  </body>
+</html>

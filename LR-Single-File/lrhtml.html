@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-main.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-getter-setters.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-process.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-html-css.js"></script>
+  </head>
+  <body>
+    <div id="lrhtml1">TODO write content</div>
+    
+    <div id="lrhtml2"></div>
+    
+    <div id="lrhtml3"></div>
+    
+    <div id="lrhtml4"></div>
+    
+    <div id="lrhtml5"></div>
+    
+    <div id="lrhtml6"></div>
+    
+    <div id="lrhtml7"></div>
+    
+    <div id="lrhtml8"></div>
+    
+    
+    <!-- Now use LR to enable HTML like for the '<br><br>' in the line below-->
+    
+    <script>
+      
+      document.getElementById("lrhtml1").innerHTML = "WTF";
+      document.getElementById("lrhtml2").innerHTML = "WTF x WTF<br><br> = WTF^2";
+      
+      document.getElementById("lrhtml3").innerHTML = "WHO DAT!!";
+      
+      document.getElementById("lrhtml4").innerHTML = "A CRAP!!";
+      
+      document.getElementById("lrhtml5").innerHTML = "OOOGY BOOOGY";
+      
+      
+      var lrh = lr.w("red",2000,10,500,4);
+      lr.toConsole();
+      
+        if(lrh >= "8.72red"){
+          document.getElementById("lrhtml1").style.color = "red";
+          console.log(true);
+        }else
+          document.getElementById("lrhtml2").style.color = "blue";
+        
+          var test = "lr.w('em',2000,3,1000,1)";  
+          document.getElementById("lrhtml3").style.fontSize = eval(test);   /* eval() is considered a security risk. But not sure if it's a */ 
+                                                                            /* risk if the string to be evaluated is sourced from a secure uneditable JSON file. Research needed. */
+          
+          var lrhtml4var1 = {
+                              lr1:function(){return lr.w('em',2000,6,1000,1)},
+                              lr2:function(){return lr.css('purple',2000,1000,'yellow',999,360)}
+                            };
+          
+          document.getElementById("lrhtml4").style.fontSize = lrhtml4var1.lr1();
+          document.getElementById("lrhtml4").style.color = lrhtml4var1.lr2();
+          
+/*           
+          var lrhtml5var1 = "{lr1:function(){return lr.w('em',2000,6,1000,1)}, lr2:function(){return lr.css('cyan',2000,1000,'blue',999,360)}}";
+          document.getElementById("lrhtml5").style.fontSize = new Function(lrhtml5var1.lr1());
+          document.getElementById("lrhtml5").style.color = new Function(lrhtml5var1.lr2());
+*/
+  
+/*   
+          var lrhtml5var1 = "lr.w('em',2000,6,1000,1)";
+          document.getElementById("lrhtml5").style.fontSize = new Function(lrhtml5var1);
+*/
+/* 
+          var lrhtml5var1 = "function(){return 6em}";
+          document.getElementById("lrhtml5").style.fontSize = new Function(lrhtml5var1())();
+*/
+  
+          /* 09/27/2020*/
+          /* This section uses 'new Function()' for testing the idea of placing lr function code in JSON  */
+          /* to then be interpreted as executable code when the JSON data file is called. So far it's promising. */
+          /* Purpose: Need to configure the lr for a given INFO THIS PAGE template view using JSON data */
+          /* containg lr methods that need to be invoked. This for the TTD website.*/
+          
+          
+          console.log("I am");
+          var x = "console.log('Alive!')";
+          new Function(x)();
+          
+          console.log("WTF");
+          var y = "console.log(lr.css('purple',2000,1990,'orange',1989,360))";
+          new Function(y)();
+          
+          var globalZ1 = "return lr.css('purple',2000,1990,'pink',1989,360)";
+          var globalZ2 = new Function(globalZ1)();
+          console.log("globalZ2 is: " + globalZ2);
+          document.getElementById("lrhtml7").innerHTML = globalZ2;
+          
+          
+          var globalZ1 = "var innerZ = {}; \n\
+                          innerZ.a = lr.css('purple',2000,1900,'pink',1899,360); \n\
+                          innerZ.b = lr.css('purple',2000,1990,'pink',1989,360); \n\
+                          return innerZ";
+          var globalZ2 = new Function(globalZ1)();
+          console.log("globalZ2 is: " + globalZ2.b);
+          document.getElementById("lrhtml8").innerHTML = "<br><br>globalZ2.a is: " + globalZ2.a + " &nbsp;&nbsp;&nbsp;&nbsp;and globalZ2.b is: " + globalZ2.b;
+          
+          
+          
+  
+          /*console.log(lr.css('purple',2000,1000,'yellow',999,360))*/
+          tbd = function(){console.log("OK")}();
+        
+      /* Ways to turn a string into executable code */
+      /* https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript */
+      /* https://stackoverflow.com/questions/14014371/how-do-i-convert-a-string-into-an-executable-line-of-code-in-javascript */
+      /* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function */
+      /* https://javascript.info/new-function */
+        
+        
+            /*document.getElementById("lrhtml2").style.color*/
+      console.log(lrh);
+      
+      
+      /*var hypotheticalCSS = lr.css("color:red",1170,900,":green",900,400,":yellow",400,320);*/
+      
+      /*var hypotheticalHTML = lr.html("<br><br><br>",1170,900,"<br><br>",900,400,"<br>",400,320);*/
+      
+    </script>
+    
+    
+  </body>
+</html>
