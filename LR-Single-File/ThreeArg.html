@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>3 Arg LR</title>
+    <link rel="SHORTCUT ICON" href="https://www.tarptiedown.com/resources/common-images/ttd-vn-icon-ttd-256x256.ico"> 
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="lr-default-config.js"></script> <!--Order Sensitive -->
+    <script src="lr-getter-setters.js"></script> <!--Order Sensitive -->
+    <script src="lr-process.js"></script> 
+    <script src="lr-html-css.js"></script>  
+    <script src="lr-main.js"></script>
+    
+    <script src="test.js"></script>
+    <!--<script src="lr-single.js"></script>-->
+    
+    
+    
+  </head>
+<body style="font-size:1em;">
+  <div id="div1">div1</div>
+  <br><br>
+  <div id="div2">div2</div>
+  <br><br>
+  <div id="div3">div3</div>
+  <br><br>
+  <div id="div4">div4</div>
+  <br><br>   
+  <div id="div5">div5</div>
+  <br><br>
+  <div id="div6">div6</div>
+
+
+
+<script>
+  
+  //lr.setVPw(1170);
+  
+  //lr.setURPw(1920);
+  //lr.setLRPw(360);
+  //lr.setURPh(937);
+  //lr.setLRPh(560);
+  
+  //lr.setURPr(937/1920);
+  //lr.setLRPr(560/360);
+  
+  
+  
+  let value = document.getElementById("div1").style.fontSize = lr.w("em",5.5,2);
+  console.log("value is: " + value); 
+  //let value;
+  let gradientValue; 
+  
+/*   
+  value = document.getElementById("div1").style.fontSize = lr.w("em",6.5,1000,8.5,600,8.5,2);
+  console.log("lr.w() value in DOM is: " + value);
+
+  
+  value = document.getElementById("div2").style.fontSize = lr.ww("em",6.5,1000,4.5,600,8.5,2);
+  console.log("lr.ww() value is: " + value);
+  
+  value = document.getElementById("div3").style.fontSize = lr.h("em",6.5,1000,8.5,600,8.5,2);
+  console.log("lr.h() value in DOM is: " + value);
+  
+  value = document.getElementById("div4").style.fontSize = lr.wh("em",6.5,2);
+  console.log("lr.wh() value 2 in DOM is: " + value);
+  
+  
+  value = document.getElementById("div5").style.fontSize = lr.r("em",6.5, 0.85,8.5, 1.176,3.0,8);
+  console.log("%clr.r() value for Div5 in DOM is: " + value,"color:red");
+  
+  
+  value = document.getElementById("div6").style.fontSize = lr.wr("em",3.4, 0.65,3.5, 1.176,1.0,8);
+  console.log("%clr.r() value for Div6 in DOM is: " + value,"color:red");
+*/
+  //lr.toConsole("From ThreeArg.html");
+  
+/*   
+  value = document.getElementById("div1").innerHTML = lr.whtml("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div1").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div2").innerHTML = lr.wwhtml("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div2").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+   
+   
+  value=  document.getElementById("div3").innerHTML = lr.hhtml("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div3").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div4").innerHTML = lr.whhtml("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div4").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div5").innerHTML = lr.rhtml("Lost<br><b><span style='color:red'>in</span> space</b>",1.50,
+                                                                "I am here",1.25,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div5").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div6").innerHTML = lr.wrhtml("Lost<br><b><span style='color:red'>in</span> space</b>",1.585,
+                                                                "I am here",1.25,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div6").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+*/
+  
+  
+  
+  
+  
+  value = document.getElementById("div1").innerHTML = lr.wcss("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "WTF! I am here",800,
+                                                                "Who<br>Goes<br>There?");
+/*                                                                 
+  gradientValue =  document.getElementById("div1").style.fontSize = lr.wrFiveArg("em",0.5,2,1.2,6.5);
+  console.log("value2 is " + value);
+  console.log("gradientValue is: " + gradientValue);
+*/
+  
+/*   
+  value=  document.getElementById("div2").innerHTML = lr.wwcss("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div2").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+   
+   
+  value=  document.getElementById("div3").innerHTML = lr.hcss("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div3").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div4").innerHTML = lr.whcss("Lost<br><b><span style='color:red'>in</span> space</b>",1500,
+                                                                "I am here",800,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div4").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div5").innerHTML = lr.rcss("Lost<br><b><span style='color:red'>in</span> space</b>",1.50,
+                                                                "I am here",1.25,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div5").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+  
+  
+  value=  document.getElementById("div6").innerHTML = lr.wrcss("Lost<br><b><span style='color:red'>in</span> space</b>",1.585,
+                                                                "I am here",1.25,
+                                                                "Who<br>Goes<br>There?");
+          document.getElementById("div6").style.fontSize = lr.w("em",2,6.5);
+  console.log("value2 is " + value);
+*/
+  
+/*   
+  let value3 = document.getElementById("div3").style.fontSize = lr.w("em",2,10);
+  console.log("value3 is " + value3);
+*/
+
+</script>  
+</body>
+</html>
