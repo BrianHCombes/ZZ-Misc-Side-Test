@@ -1,6 +1,3 @@
-// LR Response Object Declaration - window level scope
-var lr = {};
-
 // Default constants
 const lrDeviceWidth                         = window.screen.width;
 const lrDeviceWidthPropertyApplied          = "window.screen.width";
@@ -23,4 +20,3 @@ const lrRangeLowerPointHeight               = 560;
 const lrRangePoint1Ratio                    = (lrRangeUpperPointHeight/lrRangeUpperPointWidth).toFixed(4);
 const lrRangePoint2Ratio                    = (lrRangeLowerPointHeight/lrRangeLowerPointWidth).toFixed(4);
 
-//***********************************************************************************************************************************************************
